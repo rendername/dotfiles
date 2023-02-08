@@ -32,4 +32,13 @@ return require('packer').startup(function(use)
 	}
 	use {'rmehri01/onenord.nvim'}
     use 'ThePrimeagen/harpoon'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    use 'preservim/nerdtree'
+    use 'ryanoasis/vim-devicons'
+    use 'nvim-telescope/telescope-project.nvim'
+    use 'vijaymarupudi/nvim-fzf'
+    use 'tpope/vim-fugitive'
 end)
