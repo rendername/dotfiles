@@ -10,3 +10,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
+
+vim.keymap.set("n", "<leader>tt", function() vim.cmd(":sp term://bash") end)
+vim.keymap.set("n", "<leader>vt", function() vim.cmd(":vsp term://bash") end)
+vim.keymap.set("t", "<C-w>", "<C-\\><C-n>")
