@@ -27,8 +27,13 @@ nnoremap <leader>s :Explore ~/.config/scripts<CR>
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 
+syntax on
+filetype plugin on
+
 call plug#begin()
+    Plug 'vimwiki/vimwiki'
     Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 colorscheme codedark
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': 'md'}]
