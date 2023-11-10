@@ -22,10 +22,12 @@ nnoremap <leader>e :Lex<CR>
 nnoremap <leader>tt :term<CR>
 nnoremap <leader>vt :vert term<CR>
 nnoremap <leader>so :so %<CR> :echo "reloaded file"<CR>
-nnoremap <leader>n :e ~/vimwiki/index.md<CR>
+nnoremap <leader>w :e ~/vimwiki/index.md<CR>
 nnoremap <leader>s :Explore ~/.config/scripts<CR>
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
+nnoremap <leader>n :bn<CR>
+nnoremap <leader>p :bp<CR>
 
 tnoremap <C-w> <C-w>N
 
