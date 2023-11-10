@@ -27,6 +27,12 @@ nnoremap <leader>s :Explore ~/.config/scripts<CR>
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 
+tnoremap <C-w> <C-w>N
+
+"quote strings
+nnoremap <leader>' viwA'<esc>Bi'<esc>E
+nnoremap <leader>" viwA"<esc>Bi"<esc>E
+
 syntax on
 filetype plugin on
 
