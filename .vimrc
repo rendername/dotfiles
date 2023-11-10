@@ -43,6 +43,7 @@ call plug#begin()
     Plug 'vimwiki/vimwiki'
     Plug 'tomasiser/vim-code-dark'
     Plug 'hashivim/vim-terraform'
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 colorscheme codedark
