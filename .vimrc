@@ -1,6 +1,7 @@
 let mapleader = " "
 
 set tabstop=4
+set number
 set softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -29,7 +30,7 @@ nnoremap <C-d> <C-d>zz
 nnoremap <leader>n :bn<CR>
 nnoremap <leader>p :bp<CR>
 
-tnoremap <C-w> <C-w>N
+tnoremap <C-w> <C-w>N<C-w>
 
 "quote strings
 nnoremap <leader>' viwA'<esc>Bi'<esc>E
@@ -41,6 +42,7 @@ filetype plugin on
 call plug#begin()
     Plug 'vimwiki/vimwiki'
     Plug 'tomasiser/vim-code-dark'
+    Plug 'hashivim/vim-terraform'
 call plug#end()
 
 colorscheme codedark
