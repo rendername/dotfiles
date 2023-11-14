@@ -30,8 +30,6 @@ nnoremap <C-d> <C-d>zz
 nnoremap <leader>n :bn<CR>
 nnoremap <leader>p :bp<CR>
 
-tnoremap <C-w> <C-w>N<C-w>
-
 "quote strings
 nnoremap <leader>' viwA'<esc>Bi'<esc>E
 nnoremap <leader>" viwA"<esc>Bi"<esc>E
