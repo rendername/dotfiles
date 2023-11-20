@@ -1,4 +1,5 @@
 let mapleader = " "
+let g:vimwiki_url_maxsave = 0
 
 set tabstop=4
 set number
@@ -17,6 +18,10 @@ set splitbelow
 set splitright
 set path+=**/*
 set wildmenu
+set completeopt=menuone,longest
+
+inoremap <BS> <Nop>
+nnoremap <BS> <Nop>
 
 nnoremap <leader>i :e ~/.vimrc<CR>
 nnoremap <leader>e :Lex<CR>
@@ -27,8 +32,9 @@ nnoremap <leader>w :e ~/vimwiki/index.md<CR>
 nnoremap <leader>s :Explore ~/.config/scripts<CR>
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
-nnoremap <leader>n :bn<CR>
-nnoremap <leader>p :bp<CR>
+nnoremap <C-n> :bn!<CR>
+nnoremap <C-p> :bp!<CR>
+nnoremap <leader>d :cd ~/repos/*
 
 "quote strings
 nnoremap <leader>' viwA'<esc>Bi'<esc>E
@@ -46,3 +52,5 @@ call plug#end()
 
 colorscheme codedark
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': 'md'}]
+
+
