@@ -20,9 +20,6 @@ set path+=**/*
 set wildmenu
 set completeopt=menuone,longest
 
-inoremap <BS> <Nop>
-nnoremap <BS> <Nop>
-
 nnoremap <leader>i :e ~/.vimrc<CR>
 nnoremap <leader>e :Lex<CR>
 nnoremap <leader>tt :term<CR>
@@ -35,6 +32,7 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-n> :bn!<CR>
 nnoremap <C-p> :bp!<CR>
 nnoremap <leader>d :cd ~/repos/*
+nnoremap <leader>ff :Files<CR>
 
 "quote strings
 nnoremap <leader>' viwA'<esc>Bi'<esc>E
@@ -48,9 +46,10 @@ call plug#begin()
     Plug 'tomasiser/vim-code-dark'
     Plug 'hashivim/vim-terraform'
     Plug 'tpope/vim-fugitive'
+    Plug 'junegunn/fzf'
+    Plug 'junegunn/fzf.vim'
+    Plug 'jremmen/vim-ripgrep'
 call plug#end()
 
 colorscheme codedark
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': 'md'}]
-
-
