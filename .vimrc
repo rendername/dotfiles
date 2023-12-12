@@ -7,6 +7,7 @@
 
 let mapleader = " "
 let g:vimwiki_url_maxsave = 0
+let g:ranger_map_keys = 0 " turn off ranger default mapping
 
 set tabstop=4
 set number
@@ -29,7 +30,7 @@ set wildmenu
 set completeopt=menuone,longest
 
 nnoremap <leader>i :e ~/.vimrc<CR>
-nnoremap <leader>e :Lex<CR>
+nnoremap <leader>e :Ranger<CR>
 nnoremap <leader>tt :term<CR>
 nnoremap <leader>vt :vert term<CR>
 nnoremap <leader>so :so %<CR> :echo "reloaded file"<CR>
