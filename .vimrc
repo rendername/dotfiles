@@ -1,3 +1,10 @@
+" separate into:
+" sets.vim
+" keybindings.vim
+" autocommands.vim
+" commands.vim
+" plugins.vim
+
 let mapleader = " "
 let g:vimwiki_url_maxsave = 0
 
@@ -32,10 +39,10 @@ nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 nnoremap <leader>d :call Choose_repo_dir()<CR>
 nnoremap <C-j> :move +1<CR>
-nnoremap <leader>ff :Files<CR>
 nnoremap <C-k> :move -2<CR>
 nnoremap <C-n> :bn<CR>
 nnoremap <C-p> :bp<CR>
+nnoremap <leader>ff :Files<CR>
 
 syntax on
 filetype plugin on
@@ -48,6 +55,7 @@ call plug#begin()
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
     Plug 'jremmen/vim-ripgrep'
+    Plug 'francoiscabrol/ranger.vim'
 call plug#end()
 
 colorscheme codedark
