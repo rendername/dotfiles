@@ -1,0 +1,10 @@
+call plug#begin()
+    Plug 'vimwiki/vimwiki'
+    Plug 'tomasiser/vim-code-dark'
+    Plug 'hashivim/vim-terraform'
+    Plug 'tpope/vim-fugitive'
+    Plug 'junegunn/fzf'
+    Plug 'junegunn/fzf.vim'
+    Plug 'jremmen/vim-ripgrep'
+    Plug 'francoiscabrol/ranger.vim'
+call plug#end()
