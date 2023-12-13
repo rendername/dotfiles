@@ -86,20 +86,22 @@ function Choose_repo_dir()
     echo 'navigated to: '.path
 endfunction
 
-command! -nargs=0 Dir :call Dir()
-function Dir()
-    " TODO: allow args to pass in a path to start at our current dir if none
-    " i.e. Dir(../../) could allow us to choose from all dirs two dirs up
-    let current_dir = getcwd()
-    let dirs = systemlist('git ls-files | xargs -n 1 dirname | sort | uniq')
-    let selection = fzf#run(#{source: dirs})
+command! -nargs=? Dir :call Dir(<f-args>)
+function Dir(...)
+    if (exists("a:1"))
+        let selection = [a:1]
+    else
+        let current_dir = getcwd()
+        let dirs = systemlist('git ls-files | xargs -n 1 dirname | sort | uniq')
+        let selection = fzf#run(#{source: dirs})
+    endif
 
     if len(selection) == 0
-        return   
+        return
     endif
     
     execute 'cd '.selection[0]
-    echo 'navigated to: '.selection[0]
+    echo 'navigated to: '.getcwd()
 endfunction
 
 autocmd TerminalOpen * setlocal nobuflisted
