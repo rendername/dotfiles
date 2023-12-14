@@ -19,7 +19,6 @@ endfunction
 function Get_git_dirs()
     return systemlist('git ls-files | xargs -n 1 dirname | sort | uniq')
 endfunction
-
 function Choose_repo_dir()
     let repo_selection = Get_single_selection(Get_repo_list())
     let _ = Navigate_to(g:repos_dir.'/'.repo_selection)
@@ -33,4 +32,14 @@ function Dir(...)
         let selection = Get_single_selection(Get_git_dirs())
         let _ = Navigate_to(selection)
     endif
+endfunction
+
+command! -nargs=? OpenInRanger :call OpenInRanger(<f-args>)
+function OpenInRanger(...)
+    if (exists("a:1"))
+        let path = a:1
+    else
+        let path = '%'
+    endif
+    call OpenRangerIn(path, 'edit ')
 endfunction
