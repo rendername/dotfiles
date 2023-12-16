@@ -1,6 +1,6 @@
 function Get_single_selection(list)
     let selection = fzf#run(#{source: a:list})
-    return selection[0]
+    return len(selection) <=0 ? v:null : selection[0]
 endfunction
 
 function Get_repo_list()
@@ -21,7 +21,9 @@ function Get_git_dirs()
 endfunction
 function Choose_repo_dir()
     let repo_selection = Get_single_selection(Get_repo_list())
-    let _ = Navigate_to(g:repos_dir.'/'.repo_selection)
+    if (repo_selection isnot v:null)
+        let _ = Navigate_to(g:repos_dir.'/'.repo_selection)
+    endif
 endfunction
 
 command! -nargs=? Dir :call Dir(<f-args>)
@@ -30,16 +32,14 @@ function Dir(...)
         let _ = Navigate_to(a:1)
     else
         let selection = Get_single_selection(Get_git_dirs())
-        let _ = Navigate_to(selection)
+        if (selection isnot v:null)
+            let _ = Navigate_to(selection)
+        endif
     endif
 endfunction
 
 command! -nargs=? OpenInRanger :call OpenInRanger(<f-args>)
 function OpenInRanger(...)
-    if (exists("a:1"))
-        let path = a:1
-    else
-        let path = '%'
-    endif
+    let path = exists("a:1") ? a:1 : '%'
     call OpenRangerIn(path, 'edit ')
 endfunction
