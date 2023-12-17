@@ -1,3 +1,5 @@
 require('plugins')
 require('sets')
 require('general')
+require('treesitter')
+require('lsp_zero')
