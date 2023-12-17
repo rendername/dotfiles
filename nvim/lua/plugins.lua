@@ -4,5 +4,6 @@ call plug#begin()
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'francoiscabrol/ranger.vim'
     Plug 'tomasiser/vim-code-dark'
+    Plug 'hashivim/vim-terraform'
 call plug#end()
 ]]

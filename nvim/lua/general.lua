@@ -1,6 +1,6 @@
 function dir()
     local fzf_lua = require'fzf-lua'
-    opts = opts or {}
+    opts = {}
     opts.actions = {
         ['default'] = function(selected)
             vim.cmd('cd '..selected[1])
@@ -11,7 +11,7 @@ end
 vim.api.nvim_create_user_command('Dir', dir, {})
 
 vim.keymap.set('n', '<leader>d', function() 
-    local fzf_lua = require'fzf-lua'
+    local fzf_lua = require('fzf-lua')
     opts = {}
     opts.actions = {
         ['default'] = function(selected)

@@ -22,7 +22,6 @@ vim.opt.wrap=false
 vim.cmd 'colorscheme codedark'
 
 vim.keymap.set('n', '<leader>e', ':Ranger<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>i', ':edit ~/.config/nvim/init.lua<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>tt', ':hor term<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>vt', ':vert term<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>so', ':so %<CR> :echo "reloaded file"<CR>', { noremap = true })
@@ -33,3 +32,8 @@ vim.keymap.set('n', '<C-j>', ':move +1<CR>', { noremap = true })
 vim.keymap.set('n', '<C-k>', ':move -2<CR>', { noremap = true })
 vim.keymap.set('n', '<C-n>', ':bn<CR>', { noremap = true })
 vim.keymap.set('n', '<C-p>', ':bp<CR>', { noremap = true })
+
+vim.keymap.set('n', '<leader>i', function()
+    local fzf_lua = require('fzf-lua')
+    fzf_lua.files({cwd='~/.config/nvim'})
+end, { noremap = true })
