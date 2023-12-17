@@ -6,7 +6,7 @@ default:
 	git diff master
 
 install:
-	@rsync -azv ./vim ${CONFIG_DIR}
+	@rsync -azv ./nvim ${CONFIG_DIR}
 
 update:
-	@rsync -azv ${CONFIG_DIR}/vim ${REPOS_DIR}/dotfiles/
+	@rsync -azv ${CONFIG_DIR}/nvim ${REPOS_DIR}/dotfiles/
