@@ -18,5 +18,7 @@ vim.opt.splitbelow=true
 vim.opt.splitright=true
 vim.opt.path=vim.opt.path+'**/*'
 vim.opt.wildmenu=true
+vim.opt.hlsearch=false
 vim.opt.wrap=false
-vim.cmd 'colorscheme codedark'
+--vim.cmd 'colorscheme codedark' -- vscode inspired
+vim.cmd 'colorscheme 2077' -- cyberpunk inspired

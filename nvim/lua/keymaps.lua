@@ -9,6 +9,12 @@ vim.keymap.set('n', '<C-j>', ':move +1<CR>', { noremap = true })
 vim.keymap.set('n', '<C-k>', ':move -2<CR>', { noremap = true })
 vim.keymap.set('n', '<C-n>', ':bn<CR>', { noremap = true })
 vim.keymap.set('n', '<C-p>', ':bp<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>t', ':cd ~/tmp<CR>', { noremap = true})
+
+vim.keymap.set('n', '<leader>gg', function()
+    local fzf_lua = require('fzf-lua')
+    fzf_lua.live_grep({prompt = 'Grep> '})
+end)
 
 vim.keymap.set('n', '<leader>i', function()
     local fzf_lua = require('fzf-lua')
@@ -20,4 +26,9 @@ vim.keymap.set('n', '<leader>c', function()
     local fzf_lua = require('fzf-lua')
     fzf_lua.files({cwd='~/.config/nvim'})
 end, { noremap = true })
+
+vim.keymap.set('n', '<leader>b', function()
+    local fzf_lua = require('fzf-lua')
+    fzf_lua.buffers()
+end, { noremap = true})
 

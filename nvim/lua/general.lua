@@ -21,11 +21,6 @@ vim.keymap.set('n', '<leader>d', function()
     fzf_lua.fzf_exec('ls '..vim.g.repos_dir, opts)
 end)
 
-vim.keymap.set('n', '<leader>gg', function()
-    local fzf_lua = require('fzf-lua')
-    fzf_lua.live_grep()
-end)
-
 local function nums()
     local state = vim.opt.number:get()
     vim.opt.number = not state
