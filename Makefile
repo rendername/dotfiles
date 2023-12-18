@@ -3,7 +3,7 @@ CONFIG_DIR = ~/.config
 
 default:
 	git status
-	git diff master
+	git diff master --name-only
 
 install:
 	@rsync -azv ./nvim ${CONFIG_DIR}

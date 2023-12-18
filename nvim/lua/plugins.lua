@@ -6,8 +6,9 @@ call plug#begin()
     Plug 'tomasiser/vim-code-dark'
     Plug 'hashivim/vim-terraform'
     Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'nvim-tree/nvim-tree.lua'
 
-
+    " stuff for lsp
     Plug 'vonheikemen/lsp-zero.nvim'
     Plug 'williamboman/mason.nvim'
     Plug 'williamboman/mason-lspconfig.nvim'
@@ -15,5 +16,7 @@ call plug#begin()
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'l3mon4d3/LuaSnip'
+    Plug 'nvim-lua/plenary.nvim'
+    "Plug 'theprimeagen/harpoon', {'branch': 'harpoon2'} " not working at the moment require fails
 call plug#end()
 ]]

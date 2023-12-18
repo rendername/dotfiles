@@ -1,6 +1,6 @@
-function dir()
+local function dir()
     local fzf_lua = require'fzf-lua'
-    opts = {}
+    local opts = {}
     opts.actions = {
         ['default'] = function(selected)
             vim.cmd('cd '..selected[1])
@@ -10,9 +10,9 @@ function dir()
 end
 vim.api.nvim_create_user_command('Dir', dir, {})
 
-vim.keymap.set('n', '<leader>d', function() 
+vim.keymap.set('n', '<leader>d', function()
     local fzf_lua = require('fzf-lua')
-    opts = {}
+    local opts = {}
     opts.actions = {
         ['default'] = function(selected)
             vim.cmd('cd '..vim.g.repos_dir..'/'..selected[1])
@@ -22,21 +22,22 @@ vim.keymap.set('n', '<leader>d', function()
 end)
 
 vim.keymap.set('n', '<leader>gg', function()
-    fzf_lua = require('fzf-lua')
+    local fzf_lua = require('fzf-lua')
     fzf_lua.live_grep()
 end)
 
-function nums()
+local function nums()
     local state = vim.opt.number:get()
     vim.opt.number = not state
     vim.opt.relativenumber = not state
 end
 vim.api.nvim_create_user_command('Nums', nums, {})
 
-local terminal_group = vim.api.nvim_create_augroup('terminal', { clear = true })
+vim.api.nvim_create_augroup('terminal', { clear = true })
 vim.api.nvim_create_autocmd({'TermOpen'}, {
+    group = 'terminal',
     pattern = '*',
-    callback = function(event)
+    callback = function()
         nums()
         vim.cmd ':normal a'
         vim.api.nvim_buf_set_keymap(0, 't', '<C-w>', '<C-\\><C-N><C-w>', { noremap = true })
