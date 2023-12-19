@@ -6,4 +6,4 @@ require('lsp_zero')
 require('nvim_tree')
 require('nvim_cmp')
 require('keymaps')
---require('harpoon') not working at the moment
+--require('harpoon')

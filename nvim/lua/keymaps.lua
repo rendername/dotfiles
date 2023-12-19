@@ -32,3 +32,12 @@ vim.keymap.set('n', '<leader>b', function()
     fzf_lua.buffers()
 end, { noremap = true})
 
+vim.keymap.set('n', '<leader>st', function()
+    local fzf_lua = require('fzf-lua')
+    fzf_lua.buffers()
+end, { noremap = true})
+
+vim.keymap.set('n', '<leader>w', function()
+    local fzf_lua = require('fzf-lua')
+    fzf_lua.files({cwd='~/vimwiki'})
+end, { noremap = true})

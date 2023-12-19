@@ -8,6 +8,8 @@ call plug#begin()
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'nvim-tree/nvim-tree.lua'
     Plug 'akai54/2077.nvim'
+    Plug 'tpope/vim-fugitive'
+    Plug 'mbbill/undotree'
 
     " stuff for lsp
     Plug 'vonheikemen/lsp-zero.nvim'
@@ -19,7 +21,7 @@ call plug#begin()
     Plug 'l3mon4d3/LuaSnip'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'rafamadriz/friendly-snippets'
-    "Plug 'theprimeagen/harpoon', {'branch': 'harpoon2'} fails at require('harpoon')
+    "Plug 'theprimeagen/harpoon', {'branch': 'harpoon2'}
 
 call plug#end()
 ]]
