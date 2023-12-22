@@ -6,7 +6,7 @@ local function dir()
             vim.cmd('cd '..selected[1])
         end
     }
-    fzf_lua.fzf_exec('git ls-files | xargs -n 1 dirname | sort | uniq', opts)
+    fzf_lua.fzf_exec('git ls-files | xargs -n 1 -d "\n" dirname | sort | uniq', opts)
 end
 vim.api.nvim_create_user_command('Dir', dir, {})
 
@@ -48,7 +48,8 @@ local function tf_state()
     local opts = {}
     opts.actions = {
         ['default'] = function(selected)
-            vim.cmd('echo '..selected[1])
+            --vim.cmd('echo '..selected[1])
+            vim.cmd('echo here')
         end
     }
     fzf_lua.fzf_exec('terragrunt state list', opts)

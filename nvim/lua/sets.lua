@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 vim.g.repos_dir = "~/repos"
 vim.g.ranger_map_keys = 0 -- turn off ranger default mapping
 vim.g.vimwiki_list = [[{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': 'md'}]]
+vim.g.vimwiki_index_open = false
 
 vim.opt.tabstop=4
 vim.opt.number=true
