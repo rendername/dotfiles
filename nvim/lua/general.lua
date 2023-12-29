@@ -28,18 +28,6 @@ local function nums()
 end
 vim.api.nvim_create_user_command('Nums', nums, {})
 
-vim.api.nvim_create_augroup('terminal', { clear = true })
-vim.api.nvim_create_autocmd({'TermOpen'}, {
-    group = 'terminal',
-    pattern = '*',
-    callback = function()
-        vim.opt.number = false
-        vim.opt.relativenumber = false
-        vim.cmd ':normal a'
-        vim.api.nvim_buf_set_keymap(0, 't', '<C-w>', '<C-\\><C-N>', { noremap = true })
-    end
-})
-
 local function tf_state()
     --check if we are in a dir that has terragrunt.hcl
     --fail if not and let user know why

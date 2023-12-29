@@ -10,6 +10,9 @@ alias random_password="openssl rand -base64 18"
 alias g="grep --exclude-dir .terragrunt-cache"
 alias vim="nvim"
 alias v="nvim"
+alias tk="tmux kill-session"
+alias e="emacs -nw"
+alias emacs="emacs -nw"
 
 alias n="vim ~/vimwiki/index.md" # vimwiki sym-linked to /mnt/c/Users/anthony/wiki
 
