@@ -6,12 +6,12 @@ default:
 	git diff master --name-only
 
 install:
-	@rsync -azv ./nvim ${CONFIG_DIR}
-	@rsync -azv ./scripts ${CONFIG_DIR}
-	@rsync -azv ./.tmux.conf ~/.tmux.conf
-	@rsync -azv ./.emacs.d ~/
+	@rsync -azv --del ./nvim ${CONFIG_DIR}
+	@rsync -azv --del ./scripts ${CONFIG_DIR}
+	@rsync -azv --del ./.tmux.conf ~/.tmux.conf
+	@rsync -azv --del ./.emacs.d ~/
 
 update:
-	@rsync -azv ${CONFIG_DIR}/nvim ${REPOS_DIR}/dotfiles/
-	@rsync -azv ${CONFIG_DIR}/scripts ${REPOS_DIR}/dotfiles/
-	@rsync -azv ~/.emacs.d ./
+	@rsync -azv --del ${CONFIG_DIR}/nvim ${REPOS_DIR}/dotfiles/
+	@rsync -azv --del ${CONFIG_DIR}/scripts ${REPOS_DIR}/dotfiles/
+	@rsync -azv --del ~/.emacs.d ./
