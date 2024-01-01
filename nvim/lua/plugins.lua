@@ -6,7 +6,6 @@ call plug#begin()
     Plug 'tomasiser/vim-code-dark'
     Plug 'hashivim/vim-terraform'
     Plug 'nvim-treesitter/nvim-treesitter'
-    Plug 'nvim-tree/nvim-tree.lua'
     Plug 'akai54/2077.nvim'
     Plug 'tpope/vim-fugitive'
     Plug 'mbbill/undotree'
@@ -23,5 +22,6 @@ call plug#begin()
     Plug 'nvim-lua/plenary.nvim'
     Plug 'rafamadriz/friendly-snippets'
     Plug 'theprimeagen/harpoon', {'branch': 'harpoon2'}
+    Plug 'nvim-telescope/telescope-file-browser.nvim'
 call plug#end()
 ]]

@@ -1,4 +1,3 @@
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>tt', ':hor term<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>vt', ':vert term<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>so', ':so %<CR> :echo "reloaded file"<CR>', { noremap = true })
@@ -23,7 +22,7 @@ end, { noremap = true })
 
 vim.keymap.set('n', '<leader>gg', function()
     local telescope = require('telescope.builtin')
-    telescope.grep_string()
+    telescope.live_grep()
 end)
 
 vim.keymap.set('n', '<leader>i', function()
@@ -46,3 +45,5 @@ vim.keymap.set('n', '<leader>w', function()
     local telescope = require('telescope.builtin')
     telescope.find_files({cwd='~/vimwiki'})
 end, { noremap = true})
+
+vim.keymap.set('n', '<leader>e', ':Telescope file_browser<CR>', { noremap = true })
