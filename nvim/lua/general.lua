@@ -10,17 +10,6 @@ local function dir()
 end
 vim.api.nvim_create_user_command('Dir', dir, {})
 
-vim.keymap.set('n', '<leader>d', function()
-    local fzf_lua = require('fzf-lua')
-    local opts = {}
-    opts.actions = {
-        ['default'] = function(selected)
-            vim.cmd('cd '..vim.g.repos_dir..'/'..selected[1])
-        end
-    }
-    fzf_lua.fzf_exec('ls '..vim.g.repos_dir, opts)
-end)
-
 local function nums()
     local current_state = vim.opt.number:get()
     vim.opt.number = not current_state
@@ -43,3 +32,34 @@ local function tf_state()
     fzf_lua.fzf_exec('terragrunt state list', opts)
 end
 vim.api.nvim_create_user_command('TFState', tf_state, {})
+
+local goto_repo = function(opts)
+    local pickers = require "telescope.pickers"
+    local finders = require "telescope.finders"
+    local conf = require("telescope.config").values
+    local actions = require "telescope.actions"
+    local action_state = require "telescope.actions.state"
+
+    local repos_dir = "~/repos"
+    local list = vim.fn.systemlist("ls "..repos_dir)
+
+    opts = opts or {}
+    pickers.new(opts, {
+        prompt_title = "colors",
+        finder = finders.new_table {
+            results = list
+        },
+        sorter = conf.generic_sorter(opts),
+        attach_mappings = function(prompt_bufnr, map)
+            actions.select_default:replace(function()
+                actions.close(prompt_bufnr)
+                local selection = action_state.get_selected_entry()
+                vim.cmd("cd "..repos_dir.."/"..selection[1])
+            end)
+            return true
+        end,
+    }):find()
+end
+vim.keymap.set('n', '<leader>d', function()
+    goto_repo()
+end, { noremap = true })

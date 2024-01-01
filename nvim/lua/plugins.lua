@@ -10,6 +10,7 @@ call plug#begin()
     Plug 'akai54/2077.nvim'
     Plug 'tpope/vim-fugitive'
     Plug 'mbbill/undotree'
+    Plug 'nvim-telescope/telescope.nvim'
 
     " stuff for lsp
     Plug 'vonheikemen/lsp-zero.nvim'
@@ -22,6 +23,5 @@ call plug#begin()
     Plug 'nvim-lua/plenary.nvim'
     Plug 'rafamadriz/friendly-snippets'
     "Plug 'theprimeagen/harpoon', {'branch': 'harpoon2'}
-
 call plug#end()
 ]]
