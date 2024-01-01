@@ -22,6 +22,6 @@ call plug#begin()
     Plug 'l3mon4d3/LuaSnip'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'rafamadriz/friendly-snippets'
-    "Plug 'theprimeagen/harpoon', {'branch': 'harpoon2'}
+    Plug 'theprimeagen/harpoon', {'branch': 'harpoon2'}
 call plug#end()
 ]]
