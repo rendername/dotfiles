@@ -1,6 +1,5 @@
 vim.cmd [[
 call plug#begin()
-    Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'francoiscabrol/ranger.vim'
     Plug 'tomasiser/vim-code-dark'
@@ -11,6 +10,7 @@ call plug#begin()
     Plug 'mbbill/undotree'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'folke/which-key.nvim'
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
     " stuff for lsp
     Plug 'vonheikemen/lsp-zero.nvim'

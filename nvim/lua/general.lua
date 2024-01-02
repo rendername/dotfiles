@@ -44,7 +44,7 @@ vim.keymap.set('n', '<leader>d', function() select_repo() end, { noremap = true 
 local select_local_dir = function(opts)
     local title = "Select Directory"
     local start_dir = "."
-    local find_command = "find "..start_dir.." -maxdepth 1 -type d|awk 'BEGIN {FS=\"/\"} {if($NF != \".\") print $NF}'"
+    local find_command = "find "..start_dir.." -type d -not -path '*/.terragrunt-cache/*'"
     select_dir(require('telescope.themes').get_ivy{}, title, start_dir, find_command)
 end
 vim.api.nvim_create_user_command('Dir', select_local_dir, {})

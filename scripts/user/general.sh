@@ -1,3 +1,3 @@
-fix_time() {
+function fix_time() {
     sudo hwclock -s
 }
