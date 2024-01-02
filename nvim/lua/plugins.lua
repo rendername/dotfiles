@@ -10,6 +10,7 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
     Plug 'mbbill/undotree'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'folke/which-key.nvim'
 
     " stuff for lsp
     Plug 'vonheikemen/lsp-zero.nvim'
