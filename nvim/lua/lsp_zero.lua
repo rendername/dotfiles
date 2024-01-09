@@ -15,6 +15,8 @@ require('mason-lspconfig').setup({
 })
 
 require('lspconfig').gopls.setup{}
+require('lspconfig').terraformls.setup{}
+require('lspconfig').bashls.setup{}
 
 -- general lsp configuration directions: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 

@@ -1,5 +1,5 @@
 tfp() {
-    local output_dir=~/tmp/terraform-plans
+    local output_dir="/tmp"
     local suffix=$RANDOM
     local plan_path="$output_dir/plan_$suffix"
 

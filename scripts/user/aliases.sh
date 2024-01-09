@@ -14,6 +14,7 @@ alias tk="tmux kill-session"
 alias e="emacs -nw"
 alias emacs="emacs -nw"
 
+# change this to do a tmux session if not already created or connect if it is
 alias n="vim ~/vimwiki/index.md" # vimwiki sym-linked to /mnt/c/Users/anthony/wiki
 
 # terraform/terragrunt
