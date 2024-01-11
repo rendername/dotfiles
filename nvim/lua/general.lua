@@ -48,3 +48,9 @@ local select_local_dir = function(opts)
     select_dir(require('telescope.themes').get_ivy{}, title, start_dir, find_command)
 end
 vim.api.nvim_create_user_command('Dir', select_local_dir, {})
+
+local navigate_to_git_root = function(opts)
+    local path = vim.fn.system("git rev-parse --show-toplevel")
+    vim.cmd("cd "..path)
+end
+vim.keymap.set('n', '<leader>td', function() navigate_to_git_root() end, { noremap = true })
