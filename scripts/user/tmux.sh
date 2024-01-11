@@ -11,7 +11,7 @@ function d() {
                 return
             fi
         done
-        tmux new-session -s "$choice" -c "$repos_dir/$choice"
+        tmux new-session -s "$choice" -n "$choice" -c "$repos_dir/$choice"
     else
         for s in $(tmux ls | grep -oP '^\w+'); do
             if [ $s == "$choice" ]; then
@@ -20,7 +20,7 @@ function d() {
             fi
         done
 
-        tmux new-session -d -s "$choice" -c "$repos_dir/$choice"
+        tmux new-session -d -s "$choice" -n "$choice"  -c "$repos_dir/$choice"
         tmux switch -t "$choice"
     fi
 }
