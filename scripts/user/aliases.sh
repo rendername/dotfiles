@@ -1,5 +1,4 @@
 alias l="lsd -lh"
-alias cat="batcat"
 alias c="clear"
 alias cl="clear; lsd -lh"
 alias copy="xclip -sel clip"

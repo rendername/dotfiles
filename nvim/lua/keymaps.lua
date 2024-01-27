@@ -1,5 +1,4 @@
-vim.keymap.set('n', '<leader>tt', ':hor term<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>vt', ':vert term<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>tt', ':term<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>so', ':so %<CR> :echo "reloaded file"<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>ff', (function() require('telescope.builtin').find_files() end), { noremap = true })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true })
@@ -10,6 +9,7 @@ vim.keymap.set('n', '<C-p>', ':bp<CR>', { noremap = true })
 vim.keymap.set('n', '<C-n>', ':bn<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>n', ':e ~/vimwiki/index.md<CR>', { noremap = true})
 vim.keymap.set('n', '<leader>r', ':bd!<CR>', { noremap = true})
+vim.keymap.set('n', '<leader>cc', ':e ~/.aws/config<CR>', { noremap = true})
 
 --visual
 vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv", { noremap = true })

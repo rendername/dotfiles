@@ -5,7 +5,7 @@ tfp() {
 
     mkdir -p "$output_dir"
 
-    $TF_BIN plan -no-color | tee "$plan_path"
+    $TF_BIN plan -no-color -out latest.plan | tee "$plan_path"
     echo "plan saved to $plan_path"
 }
 
