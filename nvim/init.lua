@@ -1,10 +1,18 @@
-require('plugins')
 require('sets')
 require('general')
-require('treesitter')
-require('lsp_zero')
-require('nvim_cmp')
 require('keymaps')
 require('auto')
-require('harpoon_config')
-require('telescope_config')
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+require("lazy").setup("lazy_plugins")
