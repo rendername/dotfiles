@@ -6,7 +6,6 @@ return {
 			highlight = {
 				enable = true,
 			},
-
 		})
 	end,
 }
