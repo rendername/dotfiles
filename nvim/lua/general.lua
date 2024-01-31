@@ -33,7 +33,7 @@ local select_dir = function(opts, title, start_dir, find_command)
     }):find()
 end
 
-local select_repo = function(opts)
+local select_repo = function()
     local title = "Select Repository"
     local start_dir = "~/repos"
     local find_command = "find "..start_dir.." -maxdepth 1 -type d|awk 'BEGIN {FS=\"/\"} {if($NF != \".\" && $NF != \"repos\") print $NF}'"
@@ -41,7 +41,7 @@ local select_repo = function(opts)
 end
 vim.keymap.set('n', '<leader>d', function() select_repo() end, { noremap = true })
 
-local select_local_dir = function(opts)
+local select_local_dir = function()
     local title = "Select Directory"
     local start_dir = "."
     local find_command = "find "..start_dir.." -type d -not -path '*/.terragrunt-cache/*'"
@@ -49,7 +49,7 @@ local select_local_dir = function(opts)
 end
 vim.api.nvim_create_user_command('Dir', select_local_dir, {})
 
-local navigate_to_git_root = function(opts)
+local navigate_to_git_root = function()
     local path = vim.fn.system("git rev-parse --show-toplevel")
     vim.cmd("cd "..path)
 end
