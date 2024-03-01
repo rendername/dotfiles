@@ -7,3 +7,10 @@ function td() {
     cd "$path"
     echo "changed directory to $path"
 }
+
+function dir() {
+    local choice=$(find . -type d -not -path "*/.terragrunt-cache/*" | fzf)
+    [ -z "$choice" ] && return
+
+    cd "$choice"
+}

@@ -39,7 +39,7 @@ local select_repo = function()
     local find_command = "find "..start_dir.." -maxdepth 1 -type d|awk 'BEGIN {FS=\"/\"} {if($NF != \".\" && $NF != \"repos\") print $NF}'"
     select_dir(require('telescope.themes').get_ivy{}, title, start_dir, find_command)
 end
-vim.keymap.set('n', '<leader>d', function() select_repo() end, { noremap = true })
+vim.keymap.set('n', '<leader>dd', function() select_repo() end, { noremap = true })
 
 local select_local_dir = function()
     local title = "Select Directory"

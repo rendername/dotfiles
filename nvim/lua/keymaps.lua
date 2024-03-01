@@ -12,9 +12,10 @@ vim.keymap.set('n', '<C-n>', ':bn<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>n', ':e ~/vimwiki/index.md<CR>', { noremap = true})
 vim.keymap.set('n', '<leader>r', ':bd!<CR>', { noremap = true})
 vim.keymap.set('n', '<leader>cc', ':e ~/.aws/config<CR>', { noremap = true})
+vim.keymap.set('n', '<leader>bb', ':Telescope buffers<CR>', { noremap = true})
 
 
-vim.keymap.set('n', '<leader>dd', function()
+vim.keymap.set('n', '<leader>d', function()
     vim.diagnostic.open_float()
 end, { noremap = true})
 
@@ -30,6 +31,11 @@ end, { noremap = true })
 vim.keymap.set('n', '<leader>gg', function()
     local telescope = require('telescope.builtin')
     telescope.live_grep()
+end)
+
+vim.keymap.set('n', '<leader>gs', function()
+    local telescope = require('telescope.builtin')
+    telescope.grep_string()
 end)
 
 vim.keymap.set('n', '<leader>i', function()

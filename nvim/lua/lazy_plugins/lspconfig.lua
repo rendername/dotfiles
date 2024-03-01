@@ -64,14 +64,15 @@ return {
             end,
         })
 
-        lsp_config.bashls.setup({
-            capabilities = capabilities,
-            cmd = {lsp_bin_path.."bash-language-server", "start"},
-            on_attach = function()
-                vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
-                vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
-            end,
-        })
+        --not working for some reason, no time to fix at the moment
+        --lsp_config.bashls.setup({
+        --    capabilities = capabilities,
+        --    cmd = {lsp_bin_path.."bash-language-server", "start"},
+        --    on_attach = function()
+        --        vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
+        --        vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
+        --    end,
+        --})
 
         lsp_config.clangd.setup({
             capabilities = capabilities,
@@ -94,6 +95,15 @@ return {
         lsp_config.pylsp.setup({
             capabilities = capabilities,
             cmd = {lsp_bin_path.."pylsp"},
+            on_attach = function()
+                vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
+                vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
+            end,
+        })
+
+        lsp_config.terraformls.setup({
+            capabilities = capabilities,
+            cmd = {lsp_bin_path.."terraform-ls", "serve"},
             on_attach = function()
                 vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
                 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
