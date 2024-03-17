@@ -9,7 +9,7 @@ function td() {
 }
 
 function dir() {
-    local choice=$(find . -type d -not -path "*/.terragrunt-cache/*" | fzf)
+    local choice=$(find . -type d -not -path "*/.terragrunt-cache/*" -not -path "*/.git/*" | fzf)
     [ -z "$choice" ] && return
 
     cd "$choice"

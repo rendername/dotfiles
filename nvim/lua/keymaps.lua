@@ -9,11 +9,10 @@ vim.keymap.set('n', '<C-j>', ':move +1<CR>', { noremap = true })
 vim.keymap.set('n', '<C-k>', ':move -2<CR>', { noremap = true })
 vim.keymap.set('n', '<C-p>', ':bp<CR>', { noremap = true })
 vim.keymap.set('n', '<C-n>', ':bn<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>n', ':e ~/vimwiki/index.md<CR>', { noremap = true})
+--vim.keymap.set('n', '<leader>n', ':e ~/vimwiki/index.md<CR>', { noremap = true})
 vim.keymap.set('n', '<leader>r', ':bd!<CR>', { noremap = true})
 vim.keymap.set('n', '<leader>cc', ':e ~/.aws/config<CR>', { noremap = true})
 vim.keymap.set('n', '<leader>bb', ':Telescope buffers<CR>', { noremap = true})
-
 
 vim.keymap.set('n', '<leader>d', function()
     vim.diagnostic.open_float()

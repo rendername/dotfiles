@@ -1,6 +1,6 @@
-alias l="lsd -lh"
+#alias l="lsd -lh"
+alias l="ls -lh"
 alias c="clear"
-alias cl="clear; lsd -lh"
 alias copy="xclip -sel clip"
 alias tl="tmux ls"
 alias k="kubectl"

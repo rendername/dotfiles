@@ -1,6 +1,7 @@
 return {
     'neovim/nvim-lspconfig',
     dependencies = {
+        'folke/neodev.nvim',
         'hrsh7th/nvim-cmp',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
@@ -15,6 +16,9 @@ return {
         local cmp = require('cmp')
 
         vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
+        -- for neovim development completion
+        require("neodev").setup({})
 
         cmp.setup({
             snippet = {

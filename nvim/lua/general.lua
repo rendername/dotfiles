@@ -22,7 +22,7 @@ local select_dir = function(opts, title, start_dir, find_command)
             results = list,
         },
         sorter = conf.generic_sorter(opts),
-        attach_mappings = function(prompt_bufnr, map)
+        attach_mappings = function(prompt_bufnr)
             actions.select_default:replace(function()
                 actions.close(prompt_bufnr)
                 local selection = action_state.get_selected_entry()
@@ -44,10 +44,11 @@ vim.keymap.set('n', '<leader>dd', function() select_repo() end, { noremap = true
 local select_local_dir = function()
     local title = "Select Directory"
     local start_dir = "."
-    local find_command = "find "..start_dir.." -type d -not -path '*/.terragrunt-cache/*'"
+    local find_command = "find "..start_dir.." -type d -not -path '*/.terragrunt-cache/*' -not -path '*/.git/*'"
     select_dir(require('telescope.themes').get_ivy{}, title, start_dir, find_command)
 end
-vim.api.nvim_create_user_command('Dir', select_local_dir, {})
+vim.keymap.set('n', '<leader>di', function() select_local_dir() end, { noremap = true })
+--vim.api.nvim_create_user_command('Dir', select_local_dir, {})
 
 local navigate_to_git_root = function()
     local path = vim.fn.system("git rev-parse --show-toplevel")

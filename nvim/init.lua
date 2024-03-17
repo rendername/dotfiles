@@ -2,6 +2,7 @@ require('sets')
 require('general')
 require('keymaps')
 require('auto')
+require('tg')
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
